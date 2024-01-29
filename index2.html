@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        :root {
+            --mainColor: rgb(43, 43, 43);
+            --separateColor: rgb(167, 167, 167);
+        }
+
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body * {
+            font-family: 'Garamond', sans-serif;
+            color: var(--mainColor);
+        }
+
+        header {
+            display: flex;
+            border-bottom: 1px solid var(--separateColor);
+            padding: 10px 40px 10px;
+            align-items: center;
+            background-color: white;
+            top: 0;
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        header>ul {
+            list-style: none;
+            display: flex;
+            gap: 5vw;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        .navbar1 {
+            margin-left: 20px;
+        }
+
+        .navbar2 {
+            gap: 2vw;
+            margin-left: auto;
+        }
+
+        #navbar-menu {
+            display: none;
+
+            right: 0;
+            margin-left: auto;
+            padding: 10px;
+
+            cursor: pointer;
+        }
+
+        #navbar-menu>i {
+            font-size: 20px;
+        }
+
+        #navbar-items {
+            display: none;
+            position: absolute;
+            top: 50px;
+            width: 100%;
+            background-color: white;
+        }
+
+        #navbar-items>a {
+            display: flex;
+            padding: 10px 0;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            text-decoration: none;
+            font-size: 20px;
+
+            transition: all 0.4s ease;
+        }
+
+        #navbar-items>a:hover {
+            background-color: rgb(170, 170, 170);
+        }
+
+        section {
+            border-bottom: 1px var(--separateColor) solid;
+        }
+
+        .greetings {
+            display: flex;
+        }
+
+        .greetings-img {
+            background: url("https://images.unsplash.com/photo-1595770205769-84b55f75a053?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        .greetings-text {
+            padding: 100px 50px;
+        }
+
+        .greetings-text>span,
+        .article-text>span {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .greetings-text>span:nth-child(1),
+        .article-text>span:nth-child(1) {
+            margin-bottom: 25px;
+            font-weight: 550;
+        }
+
+        .huge-text {
+            font-size: 40px;
+        }
+
+        .normal-text {
+            font-size: 20px;
+        }
+
+        .small-text {
+            font-size: 15px;
+        }
+
+        .greetings-text>button,
+        .article-text>button {
+            display: block;
+            padding: 7px 20px;
+
+            font-family: monospace;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: gray;
+
+            background-color: transparent;
+
+            border: lightgray 1px solid;
+            border-radius: 5px;
+
+            margin-top: 15px;
+        }
+
+        .article {
+            display: flex;
+        }
+
+        .article-text {
+            padding: 50px 50px;
+        }
+
+        .article.fl-rv {
+            flex-direction: row-reverse;
+        }
+
+        .article-img {
+            width: 33.3%;
+
+            background: url("https://images.unsplash.com/photo-1543393470-b2c833b98dce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        .article-text {
+            width: 66.6%;
+        }
+
+        @media (min-width: 650px) {
+
+            .greetings-img,
+            .greetings-text {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            .article-img,
+            .article-text {
+                width: 50%;
+            }
+
+            .navbar2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar1 {
+                display: none;
+            }
+
+            #navbar-menu {
+                display: block;
+            }
+
+            .greetings,
+            .article,
+            .article.fl-rv {
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+            }
+
+            .article-text,
+            .article-img,
+            .greetings-text,
+            .greetings-img {
+                width: 100%;
+            }
+
+            .greetings-img,
+            .article-img {
+                height: 400px;
+            }
+
+            .greetings-text,
+            .article-text {
+                padding: 50px 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-title">Tour-guide</div>
+        <ul class="navbar1">
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Write to us</a></li>
+        </ul>
+
+        <ul class="navbar2">
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-youtube"></a></li>
+            <li><a href="#" class="fa fa-google"></a></li>
+        </ul>
+
+        <a id="navbar-menu"><i class="fa fa-bars"></i></a>
+    </header>
+
+    <div id="navbar-items">
+        <a href="#stories">Stories</a>
+        <a href="#">Gallery</a>
+        <a href="#">Features</a>
+        <a href="#">Write to us</a>
+    </div>
+
+    <section class="greetings">
+        <div class="greetings-text">
+            <span class="huge-text">Let's hit the road</span>
+            <span class="normal-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officia, fuga
+                ducimus nihil laudantium praesentium.</span>
+            <span class="small-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus pariatur nam
+                excepturi?</span>
+            <button>Start</button>
+        </div>
+        <div class="greetings-img"></div>
+    </section>
+
+    <a id="stories"></a>
+    <section class="article fl-rv">
+        <div class="article-text">
+            <span class="huge-text">Story</span>
+            <span class="normal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga fugit rem ratione
+                aspernatur, eaque voluptates? Ratione exercitationem quibusdam eligendi corporis officiis optio ipsam.
+                Error, excepturi!</span>
+            <button>Start</button>
+        </div>
+        <div class="article-img">
+        </div>
+    </section>
+    <section class="article">
+        <div class="article-text">
+            <span class="huge-text">Story</span>
+            <span class="normal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iusto dolores
+                veritatis animi fuga quo sequi dolore dolorum. A, nam quidem. Dolorem aut enim sit deleniti molestias
+                iste perspiciatis cupiditate! Adipisci ratione delectus voluptate dolores?</span>
+            <button>Start</button>
+        </div>
+        <div class="article-img">
+        </div>
+    </section>
+
+
+
+
+    <script>
+        document.getElementById("navbar-menu").addEventListener("click", () => {
+            var a = document.getElementById("navbar-items")
+
+            if (a.style.display === "none" ||
+                a.style.display === "")
+                a.style.display = "block"
+            else
+                a.style.display = "none"
+        })
+    </script>
+</body>
+
+</html>
